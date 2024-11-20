@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.bg-color {
+  background: linear-gradient(100.72deg, #122e99 -12.83%, #2370c8 104.22%);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.navbar {
+  position: absolute; /* Not fixed initially */
+  top: 0;
+  width: 100%;
+  transition: transform 0.1s ease, opacity 0.3s ease; /* Smooth transition for appearance/disappearance */
+}
+
+.navbar.hidden {
+  transform: translateY(-100%); /* Move navbar out of view */
+  opacity: 0; /* Hide it visually */
+}
+
+.navbar.fixed {
+  position: fixed; /* Fix navbar after scrolling */
+  top: 0;
+  z-index: 1000;
+  transform: translateY(0); /* Bring it into view */
+  opacity: 1; /* Make it fully visible */
+}
+
+
+.logo {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+ul li{
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+ul li a:hover {
+  background-color: white;
+  color: #122e99;
+  border-radius: 40px;
+}
+
+.relative {
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#search{
+    color: #2370C8;
+    height: 20px;   
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+}
+
+.fa-search {
+  cursor: pointer;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-gray {
+  color: #646464;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    z-index: 999; 
+}
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #122e99;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    padding: 15px 20px;
+    text-align: center;
+    display: block;
+  }
+
+  .search-container {
+    display: none;
+  }
+}
+
+.text-color{
+    color: #2370C8;
+    
+}
+::placeholder {
+    color: #2370C8;
+    font-size: 18px;
+    font-family: "Roboto", san0s-serif;
+}
+
+.cda{
+    padding: 25vh 20px 10vh 20px;
+    
+}
+
+.text-center{
+    text-align: center;
+}
+
+.b{
+    border: 2px solid #2370C8;
+}
+
+.btn {
+  background: #2370C8;
+  padding: 15px 30px;
+  border: none;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bolder;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+  animation: bounce 0.6s;
+  background: #1d5fa8; /* Slightly darker shade on hover */
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+.justify-self-center{
+    justify-self: center;
+}
+.justify-self-end{
+    justify-self: end;
+}
+.next,.less{
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background:#E0E0E0 ;
+    color: #898989;
+    padding: 4px 13px;
+    border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+
+}
+.next:hover,.less:hover{
+    
+    color: white;
+    background: #2370C8;
+   
+}
+.ds{
+    text-shadow: 2px 2px 5px #00000040;
+    font-size: 30px;
+    margin: 0 auto;
+    line-height: 60px;
+}
+
+.card div img,.simple-card div img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* border: 2px solid #2370C8; */
+    margin: 0 auto;
+}
+
+.simple-card:hover{
+  animation: bounce 0.6s;
+}
+
+.card {
+    padding: 30px 5px;
+    background-color: #E5F3FE;
+    border: 3px solid #CFEAFF;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 30%;
+    height: 300px;
+    transition: 0.5s;   
+    position: relative; /* Make sure it's positioned correctly to contain the icon */
+}
+.fa-arrow-right{
+    font-size: 2rem;
+    color: white;
+    background: #2370C8;
+    padding: 10px;
+    border-radius: 50%; 
+}   
+
+.card:hover,#about div div img:hover{
+    background-color: white;
+    transform: scale(0.9);
+    border: 3px solid #2370C8;
+}
+
+/* Change the icon's visibility and position without relying on scale */
+.circle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #1976d2;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.card:hover .circle-button {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(25px); /* Adjust position to stay visible when the card is scaled */
+}
+
+.circle-button i {
+    color: white;
+    font-size: 20px;
+}
+
+.simple-card{
+    padding: 10px;
+    border: 3px solid #CFEAFF;
+    cursor: pointer;
+    width: 30%;
+    height: 250px;
+    transition: 0.5s;   
+    position: relative; /* Make sure it's positioned correctly to contain the icon */
+}
+
+
+/* Toggle Button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 0 10px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #2196F3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height:16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.bouncing {
+  animation: bounce 1s ease-in-out;
+}
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(6px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%; 
+  }
+
+
+  .payment-card{
+    padding: 30px 5px;
+    box-shadow: 2px 2px 5px #00000040;
+    /* margin: 20px 0; */
+    cursor: pointer;
+    width: 32%;
+    transition: 0.5s;   
+    position: relative; /* Make sure it's positioned correctly to contain the icon */
+  }
+
+  .payment-card:hover h1,
+  .payment-card:hover p,
+.payment-card:hover p span,
+.payment-card:hover .text-gray {
+  color: white; /* All text becomes white */
+}
+
+.payment-card:hover .btn {
+  background-color: white; /* Button background turns white */
+  color: #2370C8; /* Button text becomes blue */
+  transition: 0.3s; /* Smooth transition for button changes */
+}
+
+  .payment-card:hover{
+    /* transform: scale(1.01); */
+    background-color: #2370C8;
+    color: white;
+  }
